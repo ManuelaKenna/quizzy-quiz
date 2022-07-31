@@ -35,7 +35,7 @@ var questions=[
 //display first question
 function displayQuestions(){
     document.querySelector(".questions").textContent=questions[qi].text
-    document.querySelector(".answer-box").innerHTML=""
+    document.querySelector(".answer-box").innerHTML="answer-box"
     questions[qi].choices.forEach(function(choices){
         var btn=document.createElement("button")
         btn.textContent=choices;
