@@ -8,7 +8,7 @@ var qi=0
 startBtn.addEventListener("click",function(){
     startEl.setAttribute("class", "hide")
     quizEl.removeAttribute("class","hide")
-    displayQuestion()
+    displayQuestions()
 })
 
 //add a timer
@@ -23,23 +23,23 @@ var interval = setInterval(function(){
   }
 }, 1000);
 
-//change to real questions
+//quiz questions and answers
 var questions=[
-    {text:"Commonly used data types do not include:",choices:["a. booleans","b. strings","c. alerts","d. numbers"],answer:"a"},
-    {text:"What is html?",choices:["a","b","c","d"],answer:"a"},
-    {text:"What is html?",choices:["a","b","c","d"],answer:"a"},
-    {text:"What is html?",choices:["a","b","c","d"],answer:"a"},
-    {text:"What is html?",choices:["a","b","c","d"],answer:"a"}
+    {text:"Commonly used data types DO not include:",choices:["a. booleans","b. strings","c. alerts","d. numbers"],answer:"a"},
+    {text:"The condition in an if/else statement is enclosed with ______.",choices:["a. quotes","b. curly brackets","c. parenthesis","d. square brackets"],answer:"c"},
+    {text:"Arrays in Javascript can be used to store ______.",choices:["a. numbers and strings","b. other arrays","c. booleans","d. all of the above"],answer:"d"},
+    {text:"String values must be enclosed within ______ when being assigned to variables.",choices:["a. commas","b. curly brackets","c. quotes","d. parenthsis"],answer:"b"},
+    {text:"A very useful tool used for development and debugging for printing content to the debugger is:",choices:["a. JavaScript","b. terminal/bash","c. for loops","d. console.log"],answer:"c"}
 ]
 
 //display first question
-function displayQuestion(){
-    document.querySelector(".question-text").textContent=questions[qi].text
-    document.querySelector('.answer-box').innerHTML=""
-    questions[qi].choices.forEach(function(choice){
+function displayQuestions(){
+    document.querySelector(".questions").textContent=questions[qi].text
+    document.querySelector(".answer-box").innerHTML=""
+    questions[qi].choices.forEach(function(choices){
         var btn=document.createElement("button")
-        btn.textContent=choice;
-        btn.setAttribute("value",choice)
+        btn.textContent=choices;
+        btn.setAttribute("value",choices)
         btn.onclick=evaluateAnswer
         document.querySelector(".answer-box").appendChild(btn)
     })
@@ -47,12 +47,12 @@ function displayQuestion(){
 function evaluateAnswer(){
     console.log(this.value)
     qi++;
-    displayQuestion()
+    displayQuestions()
 }
 //show quiz div 
 var quizEl=document.querySelector(".quiz")
 
-//display first question
+
 //add answer buttons
 //check for correct answer
 //show next question

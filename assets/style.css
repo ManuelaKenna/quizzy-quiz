@@ -1,3 +1,22 @@
 .hide {
     display:none
 }
+
+.displayQuestions {
+    display: flex; 
+    content: center;
+    font-family: "Roboto", sans-serif;
+    box-sizing: 100px;
+    box-shadow: 1em;
+    justify-content: center;
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 6em;
+}
+
+.answer-box {
+    position: relative;
+    position:static;
+    background-color: blueviolet;
+    vertical-align: middle;
+}
