@@ -49,9 +49,9 @@ function displayQuestions(){
 function evaluateAnswer(){
     console.log(this.value);
     if(this.value===questions[qi].answer){
-        document.getElementById('check').innerHTML="correct"
+        document.getElementById('check').innerHTML="correct!"
     }else{
-        document.getElementById('check').innerHTML="wrong"
+        document.getElementById('check').innerHTML="wrong!"
         count-=10
     }
     qi++;
