@@ -50,12 +50,14 @@ function evaluateAnswer(){
     qi++;
     displayQuestions()
 }
+
 //show quiz div 
 var quizEl=document.querySelector(".quiz")
 
-
-//add answer buttons
-//check for correct answer
-//show next question
-//repeat until end
 //run end game function
+function saveScore(){
+    localStorage.setItem(score, timerValue)
+    }
+
+
+
