@@ -12,7 +12,7 @@ startBtn.addEventListener("click",function(){
 })
 
 //add a timer
-var count = 20;
+var count = 60;
 var interval = setInterval(function(){
   document.getElementById('count').innerHTML=count;
   count--;
@@ -25,28 +25,35 @@ var interval = setInterval(function(){
 
 //quiz questions and answers
 var questions=[
-    {text:"Commonly used data types DO not include:",choices:["a. booleans","b. strings","c. alerts","d. numbers"],answer:"a"},
-    {text:"The condition in an if/else statement is enclosed with ______.",choices:["a. quotes","b. curly brackets","c. parenthesis","d. square brackets"],answer:"c"},
-    {text:"Arrays in Javascript can be used to store ______.",choices:["a. numbers and strings","b. other arrays","c. booleans","d. all of the above"],answer:"d"},
-    {text:"String values must be enclosed within ______ when being assigned to variables.",choices:["a. commas","b. curly brackets","c. quotes","d. parenthsis"],answer:"b"},
-    {text:"A very useful tool used for development and debugging for printing content to the debugger is:",choices:["a. JavaScript","b. terminal/bash","c. for loops","d. console.log"],answer:"c"}
+    {text:"Commonly used data types DO not include:",choices:["a. booleans","b. strings","c. alerts","d. numbers"],answer:"a. booleans"},
+    {text:"The condition in an if/else statement is enclosed with ______.",choices:["a. quotes","b. curly brackets","c. parenthesis","d. square brackets"],answer:"c. parenthesis"},
+    {text:"Arrays in Javascript can be used to store ______.",choices:["a. numbers and strings","b. other arrays","c. booleans","d. all of the above"],answer:"d. all of the above"},
+    {text:"String values must be enclosed within ______ when being assigned to variables.",choices:["a. commas","b. curly brackets","c. quotes","d. parenthsis"],answer:"b. curly brackets"},
+    {text:"A very useful tool used for development and debugging for printing content to the debugger is:",choices:["a. JavaScript","b. terminal/bash","c. for loops","d. console.log"],answer:"c. for loops"}
 ]
 
 //display first question
 function displayQuestions(){
     document.querySelector(".questions").textContent=questions[qi].text
     document.querySelector(".answer-box").innerHTML=""
-    questions[qi].choices.forEach(function(choices){
+    questions[qi].choices.forEach(function (choices){
         var btn=document.createElement("button")
-        btn.textContent=choices;
+        btn.textContent=choices
         btn.setAttribute("value",choices)
         btn.onclick=evaluateAnswer
         document.querySelector(".answer-box").appendChild(btn)
     })
 }
 
+//right and wrong answers calculation
 function evaluateAnswer(){
-    console.log(this.value)
+    console.log(this.value);
+    if(this.value===questions[qi].answer){
+        document.getElementById('check').innerHTML="correct"
+    }else{
+        document.getElementById('check').innerHTML="wrong"
+        count-=10
+    }
     qi++;
     displayQuestions()
 }
@@ -57,7 +64,5 @@ var quizEl=document.querySelector(".quiz")
 //run end game function
 function saveScore(){
     localStorage.setItem(score, timerValue)
-    }
 
-
-
+}
