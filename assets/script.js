@@ -12,7 +12,7 @@ startBtn.addEventListener("click",function(){
 })
 
 //add a timer
-var count = 15;
+var count = 20;
 var interval = setInterval(function(){
   document.getElementById('count').innerHTML=count;
   count--;
@@ -35,7 +35,7 @@ var questions=[
 //display first question
 function displayQuestions(){
     document.querySelector(".questions").textContent=questions[qi].text
-    document.querySelector(".answer-box").innerHTML="answer-box"
+    document.querySelector(".answer-box").innerHTML=""
     questions[qi].choices.forEach(function(choices){
         var btn=document.createElement("button")
         btn.textContent=choices;
@@ -44,6 +44,7 @@ function displayQuestions(){
         document.querySelector(".answer-box").appendChild(btn)
     })
 }
+
 function evaluateAnswer(){
     console.log(this.value)
     qi++;
