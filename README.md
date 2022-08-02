@@ -2,7 +2,7 @@
 
 Code quiz challenge!
 
-This quiz scrolls through questions and logs right and wrong answers.
+This quiz scrolls through questions about coding and logs right and wrong answers.
 
 https://manuelakenna.github.io/quizzy-quiz/
 
