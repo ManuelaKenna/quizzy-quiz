@@ -1,3 +1,5 @@
+# quizzy-quiz
+
 Code quiz challenge!
 
 This quiz scrolls through questions and logs right and wrong answers.
@@ -20,9 +22,3 @@ THEN the game is over
 WHEN the game is over
 THEN I can save my initials and score
 
-
-
-
-
-
-# quizzy-quiz
