@@ -45,6 +45,8 @@ function displayQuestions(){
     })
 }
 
+
+
 //right and wrong answers calculation
 function evaluateAnswer(){
     console.log(this.value);
