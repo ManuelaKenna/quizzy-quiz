@@ -34,6 +34,8 @@ var questions=[
 
 //display first question
 function displayQuestions(){
+    console.log(qi,questions)
+    if(qi < questions.length){
     document.querySelector(".questions").textContent=questions[qi].text
     document.querySelector(".answer-box").innerHTML=""
     questions[qi].choices.forEach(function (choices){
@@ -42,14 +44,12 @@ function displayQuestions(){
         btn.setAttribute("value",choices)
         btn.onclick=evaluateAnswer
         document.querySelector(".answer-box").appendChild(btn)
-    })
+    })} else { endGame()}
 }
-
-
 
 //right and wrong answers calculation
 function evaluateAnswer(){
-    console.log(this.value);
+    console.log(this.value , qi);
     if(this.value===questions[qi].answer){
         document.getElementById('check').innerHTML="correct!"
     }else{
@@ -62,6 +62,10 @@ function evaluateAnswer(){
 
 //show quiz div 
 var quizEl=document.querySelector(".quiz")
+
+function endGame (){
+    console.log("endGame")
+}
 
 //run end game function
 function saveScore(){
